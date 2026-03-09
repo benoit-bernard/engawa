@@ -1,0 +1,24 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build
+bin/
+obj/
+
+# NuGet
+packages/
+*.nupkg
+
+# Web
+wwwroot/lib/
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# Visual Studio Code
+.vscode/
