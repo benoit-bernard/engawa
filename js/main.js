@@ -1,0 +1,1 @@
+// Comportement minimal : toggle nav sur mobile document.addEventListener('DOMContentLoaded', function(){ var btn = document.getElementById('navToggle'); var nav = document.getElementById('mainNav'); if(!btn||!nav) return; btn.addEventListener('click', function(){ nav.classList.toggle('open'); }); });
