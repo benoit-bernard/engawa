@@ -1,79 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Engawa — Technologie éthique et transparente</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Engawa — Plateforme de développement éthique et transparent. Applications numériques conçues avec respect, clarté et responsabilité." />
+    <meta name="theme-color" content="#F5F0EB" />
+    <title>Engawa — Technologie Éthique et Transparente</title>
+    <base href="/" />
+    <link href="_framework/dotnet.zdo08lyk47.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-dxfK66HblTceeyFnMBxThnvUXCr3DeY2MHQfjmnIp64=" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link href="Engawa.styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.66stpp682q.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.69poregybn.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.q5rqv3xrhm.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.zdo08lyk47.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.66stpp682q.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
+    "./_framework/blazor.webassembly.js": "sha256-3lCWrko3zwspV40aQhs2S/IMkRSarnHRKIdkHhuXIBA=",
+    "./_framework/dotnet.js": "sha256-dxfK66HblTceeyFnMBxThnvUXCr3DeY2MHQfjmnIp64=",
+    "./_framework/dotnet.native.69poregybn.js": "sha256-JvdIvkSF0x6euoPT2QnQSMg2Gyv2oJbFeBi1XmWLYFU=",
+    "./_framework/dotnet.native.js": "sha256-JvdIvkSF0x6euoPT2QnQSMg2Gyv2oJbFeBi1XmWLYFU=",
+    "./_framework/dotnet.runtime.js": "sha256-ArknccFM1sHNVcih0x1h52AG+abNCoQjl6BlVrv3ePw=",
+    "./_framework/dotnet.runtime.q5rqv3xrhm.js": "sha256-ArknccFM1sHNVcih0x1h52AG+abNCoQjl6BlVrv3ePw=",
+    "./_framework/dotnet.zdo08lyk47.js": "sha256-dxfK66HblTceeyFnMBxThnvUXCr3DeY2MHQfjmnIp64="
+  }
+}</script>
 </head>
+
 <body>
-    <header class="site-header"> <div class="container header-inner"> <div class="logo-wrap"> <img src="assets/logo.svg" alt="Engawa" class="logo"> </div> <button id="navToggle" class="nav-toggle" aria-label="Ouvrir le menu">☰</button> <nav class="nav" id="mainNav"> <a href="#manifesto">Manifesto</a> <a href="#apps">App Gallery</a> <a href="#values">Valeurs</a> </nav> </div> </header>
-    <main>
-        <section class="hero"> <div class="container hero-inner"> <h1>Un espace ouvert entre l’humain et la technologie.</h1> <p class="lead">Engawa est une plateforme qui présente et héberge des applications numériques conçues selon des principes éthiques et souverains.</p> <p class="cta-row"> <a class="btn" href="#manifesto">Découvrir le manifesto</a> <a class="btn btn-ghost" href="#apps">Voir les applications</a> </p> </div> </section>
-        <section id="manifesto" class="manifesto">
-            <div class="container">
-                <h2>Manifesto</h2>
-                <p class="muted">Dans l’architecture japonaise, l’engawa est un espace de transition — ni complètement intérieur, ni totalement extérieur. Engawa recrée cet espace entre les utilisateurs et la technologie.</p>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
 
-                <div class="cards">
-                    <article class="card">
-                        <h3>Hébergement en Europe</h3>
-                        <p>🇪🇺 Données hébergées en Europe pour garantir souveraineté et conformité.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Respect de la vie privée</h3>
-                        <p>🔒 Respect strict de la vie privée et collecte minimale des données.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Ouverture</h3>
-                        <p>🧩 Ouverture du code et documentation claire lorsque possible.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <div id="blazor-error-ui">
+        Une erreur inattendue s'est produite.
+        <a href="." class="reload">Recharger</a>
+        <span class="dismiss">🗙</span>
+    </div>
 
-        <section id="apps" class="apps">
-            <div class="container">
-                <h2>App Gallery</h2>
-                <p class="muted">Chaque projet est documenté pour expliquer ce qu’il fait, comment il fonctionne, quelles données il utilise et quelles garanties il offre.</p>
-
-                <div class="app-grid">
-                    <div class="app-card">Placeholder App 1</div>
-                    <div class="app-card">Placeholder App 2</div>
-                    <div class="app-card">Placeholder App 3</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="values" class="values">
-            <div class="container">
-                <h2>Nos valeurs</h2>
-                <div class="values-grid">
-                    <div class="value">
-                        <h4>Transparence</h4>
-                        <p>Les utilisateurs doivent comprendre les outils qu’ils utilisent.</p>
-                    </div>
-                    <div class="value">
-                        <h4>Respect</h4>
-                        <p>Les données personnelles appartiennent aux individus.</p>
-                    </div>
-                    <div class="value">
-                        <h4>Souveraineté</h4>
-                        <p>Infrastructures situées en Europe, conformes au droit européen.</p>
-                    </div>
-                    <div class="value">
-                        <h4>Simplicité</h4>
-                        <p>Services compréhensibles et maîtrisables.</p>
-                    </div>
-                    <div class="value">
-                        <h4>Ouverture</h4>
-                        <p>Préférence pour l'open-source et la documentation publique.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="site-footer"> <div class="container"> <p>© Engawa — Technologie éthique et transparente. Données hébergées en Europe.</p> </div> </footer>
-    <script src="js/main.js" defer></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="_framework/blazor.webassembly.66stpp682q.js"></script>
 </body>
+
 </html>
