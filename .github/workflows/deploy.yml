@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 concurrency:
   group: build-and-deploy
   cancel-in-progress: true
@@ -67,6 +70,7 @@ jobs:
           publish_dir: ./publish/wwwroot
           publish_branch: public
           allow_empty_commit: false
-          clean: true
-          user_name: "github-actions[bot]"
-          user_email: "41898282+github-actions[bot]@users.noreply.github.com"
+          # keep_files=false will remove files on the target branch before publishing (clean behavior)
+          keep_files: false
+          # If your repository branch protection disallows pushes from GitHub Actions,
+          # consider using a dedicated deploy key or allow GitHub Actions to push.
