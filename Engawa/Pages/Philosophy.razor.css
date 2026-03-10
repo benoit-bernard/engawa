@@ -1,0 +1,174 @@
+/* === Philosophy Hero === */
+.philosophy-hero {
+    padding: var(--space-section) var(--space-xl);
+    background-color: var(--color-bg);
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    margin-bottom: var(--space-md);
+}
+
+.philosophy-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl));
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+    margin: 0 0 var(--space-xl);
+}
+
+.lead {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--font-size-md), 2vw, var(--font-size-xl));
+    font-weight: var(--font-weight-light);
+    font-style: italic;
+    color: var(--color-text-medium);
+    line-height: var(--line-height-loose);
+    margin: 0;
+}
+
+/* === Sections === */
+.philosophy-section {
+    padding: var(--space-section) var(--space-xl);
+    background-color: var(--color-bg);
+}
+
+.philosophy-section--alt {
+    background-color: var(--color-bg-alt);
+}
+
+.prose-block h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--font-size-2xl), 3.5vw, var(--font-size-3xl));
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    margin: 0 0 var(--space-xl);
+}
+
+.prose-block p {
+    font-size: var(--font-size-md);
+    color: var(--color-text-medium);
+    line-height: var(--line-height-loose);
+}
+
+.prose-block strong {
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+}
+
+/* === Values list === */
+.values-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+}
+
+.value-detail {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    padding: var(--space-xl);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(196, 168, 130, 0.1);
+    transition: box-shadow var(--transition-base);
+}
+
+.value-detail:hover {
+    box-shadow: var(--shadow-card);
+}
+
+.value-detail__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-blue-pale), var(--color-beige-pale));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.value-detail__content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-light);
+    color: var(--color-text);
+    letter-spacing: 0.06em;
+    margin: 0 0 var(--space-sm);
+}
+
+.value-detail__content p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-medium);
+    line-height: var(--line-height-loose);
+    margin: 0;
+}
+
+/* === Commitment === */
+.philosophy-commitment {
+    background: linear-gradient(135deg, var(--color-blue-pale), var(--color-beige-pale));
+}
+
+.commitment-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.commitment-content blockquote {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-2xl));
+    font-weight: var(--font-weight-light);
+    font-style: italic;
+    color: var(--color-text-medium);
+    line-height: var(--line-height-loose);
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.commitment-content blockquote::before { content: ''; }
+.commitment-content blockquote::after  { content: ''; }
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 2rem;
+    background-color: transparent;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--border-radius-xl);
+    border: 1.5px solid var(--color-text);
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+@media (max-width: 640px) {
+    .value-detail {
+        grid-template-columns: 1fr;
+    }
+}

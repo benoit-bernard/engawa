@@ -1,0 +1,141 @@
+@page "/contact"
+@inject ContactService ContactSvc
+@inject ScrollAnimationService ScrollAnimations
+
+<PageTitle>Contact — Engawa</PageTitle>
+
+<section class="contact-hero">
+    <div class="container--narrow">
+        <span class="eyebrow animate-fade-in-up">Échangeons</span>
+        <h1 class="animate-fade-in-up" style="animation-delay:0.2s">Nous contacter</h1>
+        <p class="lead animate-fade-in-up" style="animation-delay:0.4s">
+            Vous avez une question, une idée ou souhaitez collaborer ?
+            Nous sommes à votre écoute.
+        </p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="contact-layout container">
+
+        <!-- Form -->
+        <div class="contact-form-wrapper" data-reveal>
+            @if (_sent)
+            {
+                <div class="success-message">
+                    <span class="success-icon" aria-hidden="true">&#10003;</span>
+                    <h2>Message envoyé</h2>
+                    <p>Votre client de messagerie a été ouvert avec votre message. Nous vous répondrons sous 48h.</p>
+                    <button class="btn-reset" @onclick="Reset">Envoyer un autre message</button>
+                </div>
+            }
+            else
+            {
+                <EditForm Model="_form" OnValidSubmit="HandleSubmit" novalidate>
+                    <DataAnnotationsValidator />
+
+                    <div class="form-group">
+                        <label for="contact-name" class="form-label">Prénom &amp; Nom</label>
+                        <InputText id="contact-name" class="form-input" @bind-Value="_form.Name"
+                                   placeholder="Jean Dupont" autocomplete="name" />
+                        <ValidationMessage For="() => _form.Name" class="form-error" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-email" class="form-label">Adresse email</label>
+                        <InputText id="contact-email" class="form-input" @bind-Value="_form.Email"
+                                   placeholder="vous@exemple.fr" autocomplete="email" inputmode="email" />
+                        <ValidationMessage For="() => _form.Email" class="form-error" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-subject" class="form-label">Sujet</label>
+                        <InputText id="contact-subject" class="form-input" @bind-Value="_form.Subject"
+                                   placeholder="Votre sujet..." />
+                        <ValidationMessage For="() => _form.Subject" class="form-error" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message" class="form-label">Message</label>
+                        <InputTextArea id="contact-message" class="form-input form-textarea" @bind-Value="_form.Message"
+                                       placeholder="Décrivez votre projet, votre question..." rows="6" />
+                        <ValidationMessage For="() => _form.Message" class="form-error" />
+                    </div>
+
+                    <button type="submit" class="btn-submit" disabled="@_sending">
+                        @if (_sending)
+                        { <span>Envoi en cours…</span> }
+                        else
+                        { <span>Envoyer le message →</span> }
+                    </button>
+
+                </EditForm>
+            }
+        </div>
+
+        <!-- Info -->
+        <aside class="contact-info" data-reveal data-reveal-delay="2">
+            <div class="info-card">
+                <h3>Informations</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-icon" aria-hidden="true">&#9993;</span>
+                        <a href="mailto:contact@engawa.fr">contact@engawa.fr</a>
+                    </li>
+                    <li>
+                        <span class="info-icon" aria-hidden="true">&#9202;</span>
+                        <span>Réponse sous 48h ouvrées</span>
+                    </li>
+                    <li>
+                        <span class="info-icon" aria-hidden="true">&#127760;</span>
+                        <span>France, Union Européenne</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="info-card info-card--github">
+                <h3>Code source</h3>
+                <p>Ce site est open-source. Consultez le code sur GitHub.</p>
+                <a href="https://github.com/benoit-bernard/engawa"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="github-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                    </svg>
+                    Voir sur GitHub
+                </a>
+            </div>
+        </aside>
+
+    </div>
+</section>
+
+@code {
+    private readonly ContactFormModel _form = new();
+    private bool _sending;
+    private bool _sent;
+
+    private async Task HandleSubmit()
+    {
+        _sending = true;
+        await ContactSvc.SendAsync(_form);
+        _sending = false;
+        _sent = true;
+    }
+
+    private void Reset()
+    {
+        _form.Name    = string.Empty;
+        _form.Email   = string.Empty;
+        _form.Subject = string.Empty;
+        _form.Message = string.Empty;
+        _sent = false;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+            await ScrollAnimations.InitAsync();
+    }
+}

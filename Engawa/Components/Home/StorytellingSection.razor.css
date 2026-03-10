@@ -1,0 +1,62 @@
+.storytelling {
+    padding: var(--space-section) var(--space-xl);
+    background-color: var(--color-bg-alt);
+    position: relative;
+}
+
+.storytelling-intro {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.storytelling-quote {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-3xl));
+    font-weight: var(--font-weight-light);
+    font-style: italic;
+    color: var(--color-text-medium);
+    line-height: var(--line-height-loose);
+    margin: 0;
+}
+
+.storytelling-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.story-block {
+    padding: var(--space-2xl) 0;
+    text-align: center;
+}
+
+.story-block p {
+    font-size: var(--font-size-md);
+    color: var(--color-text-medium);
+    line-height: var(--line-height-loose);
+    margin: 0 0 var(--space-md);
+}
+
+.story-block p:last-child {
+    margin-bottom: 0;
+}
+
+.story-block strong {
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+}
+
+.story-closing {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-light);
+    font-style: italic;
+    color: var(--color-blue);
+}
+
+.story-divider {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--color-beige), transparent);
+    margin-inline: auto;
+}

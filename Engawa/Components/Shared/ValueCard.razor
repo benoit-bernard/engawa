@@ -1,0 +1,12 @@
+<article class="value-card" data-reveal data-reveal-delay="@Delay">
+    <div class="value-card__icon" aria-hidden="true">@((MarkupString)Icon)</div>
+    <h3 class="value-card__title">@Title</h3>
+    <p class="value-card__description">@Description</p>
+</article>
+
+@code {
+    [Parameter, EditorRequired] public string Icon        { get; set; } = string.Empty;
+    [Parameter, EditorRequired] public string Title       { get; set; } = string.Empty;
+    [Parameter, EditorRequired] public string Description { get; set; } = string.Empty;
+    [Parameter] public string Delay { get; set; } = "1";
+}

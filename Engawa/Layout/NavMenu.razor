@@ -1,39 +1,53 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Engawa</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+﻿<header class="site-header" role="banner">
+    <nav class="nav-container" aria-label="Navigation principale">
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
+        <a class="nav-brand" href="/" aria-label="Engawa — Accueil">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 60" fill="none" class="nav-logo" aria-hidden="true">
+                <circle cx="38" cy="30" r="25" fill="#C8DCE8" opacity="0.75" />
+                <circle cx="38" cy="30" r="17" fill="#9BBDD2" opacity="0.9" />
+                <circle cx="38" cy="30" r="10" fill="#7BAFC8" />
+                <circle cx="72" cy="30" r="25" fill="#E8D5BB" opacity="0.75" />
+                <circle cx="72" cy="30" r="17" fill="#D4BC96" opacity="0.9" />
+                <circle cx="72" cy="30" r="10" fill="#C4A882" />
+            </svg>
+            <span class="nav-brand-text">ENGAWA</span>
+        </a>
+
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="@_menuOpen" @onclick="ToggleMenu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <ul class="nav-links @(_menuOpen ? "nav-links--open" : "")" role="list">
+            <li>
+                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All" @onclick="CloseMenu">
+                    Accueil
+                </NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="/philosophy" @onclick="CloseMenu">
+                    Philosophie
+                </NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="/contact" @onclick="CloseMenu">
+                    Contact
+                </NavLink>
+            </li>
+            <li>
+                <NavLink class="nav-link" href="/legal" @onclick="CloseMenu">
+                    CGU
+                </NavLink>
+            </li>
+        </ul>
+
     </nav>
-</div>
+</header>
 
 @code {
-    private bool collapseNavMenu = true;
+    private bool _menuOpen;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    private void ToggleMenu() => _menuOpen = !_menuOpen;
+    private void CloseMenu()  => _menuOpen = false;
 }

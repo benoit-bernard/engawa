@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Engawa</title>
+    <meta name="description" content="Engawa — Plateforme de développement éthique et transparent. Applications numériques conçues avec respect, clarté et responsabilité." />
+    <meta name="theme-color" content="#F5F0EB" />
+    <title>Engawa — Technologie Éthique et Transparente</title>
     <base href="/" />
     <link rel="preload" id="webassembly" />
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
     <link href="Engawa.styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <script type="importmap"></script>
 </head>
 
@@ -24,10 +34,12 @@
     </div>
 
     <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="." class="reload">Reload</a>
+        Une erreur inattendue s'est produite.
+        <a href="." class="reload">Recharger</a>
         <span class="dismiss">🗙</span>
     </div>
+
+    <script src="js/scroll-animations.js"></script>
     <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
 </body>
 

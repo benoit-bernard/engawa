@@ -1,0 +1,22 @@
+.manifesto {
+    padding: var(--space-section) var(--space-xl);
+    background-color: var(--color-bg);
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+@media (max-width: 1024px) {
+    .manifesto-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .manifesto-grid {
+        grid-template-columns: 1fr;
+    }
+}

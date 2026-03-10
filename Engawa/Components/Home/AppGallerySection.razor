@@ -1,0 +1,43 @@
+<section class="app-gallery" aria-labelledby="gallery-title">
+    <div class="container">
+
+        <SectionTitle Title="App Gallery"
+                      Eyebrow="Applications éthiques"
+                      Subtitle="Des outils numériques conçus selon nos principes. Bientôt disponibles." />
+
+        <div class="gallery-grid">
+            @foreach (var app in _placeholderApps)
+            {
+                <div class="gallery-card" data-reveal data-reveal-delay="@app.Delay">
+                    <div class="gallery-card__badge">Bientôt</div>
+                    <div class="gallery-card__icon" aria-hidden="true">@((MarkupString)app.Icon)</div>
+                    <h3 class="gallery-card__name">@app.Name</h3>
+                    <p class="gallery-card__desc">@app.Description</p>
+                    <div class="gallery-card__tags">
+                        @foreach (var tag in app.Tags)
+                        {
+                            <span class="tag">@tag</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="gallery-cta" data-reveal>
+            <p>Vous avez un projet éthique à réaliser ?</p>
+            <a href="/contact" class="gallery-cta-link">Travaillons ensemble →</a>
+        </div>
+
+    </div>
+</section>
+
+@code {
+    private record AppPlaceholder(string Icon, string Name, string Description, string[] Tags, string Delay);
+
+    private readonly AppPlaceholder[] _placeholderApps =
+    [
+        new("&#128274;", "PrivaNote", "Application de prise de notes chiffrée, sans compte, sans tracking.", ["Vie privée", "Open-source", "RGPD"], "1"),
+        new("&#128203;", "EthiForm", "Formulaires en ligne sans collecte de données tierces ni cookies tiers.", ["Formulaires", "Souverain", "EU"], "2"),
+        new("&#127968;", "Engawa Hub", "Tableau de bord centralisé pour gérer vos applications éthiques.", ["Dashboard", "Self-hosted", "Open-source"], "3"),
+    ];
+}

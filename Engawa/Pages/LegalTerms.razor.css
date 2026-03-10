@@ -1,0 +1,101 @@
+/* === Legal Hero === */
+.legal-hero {
+    padding: var(--space-section) var(--space-xl) var(--space-2xl);
+    background-color: var(--color-bg);
+    text-align: center;
+}
+
+.legal-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-3xl));
+    font-weight: var(--font-weight-light);
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    margin: 0 0 var(--space-md);
+}
+
+.eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    margin-bottom: var(--space-md);
+}
+
+.legal-meta {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* === Legal Content === */
+.legal-content {
+    padding: var(--space-3xl) var(--space-xl) var(--space-section);
+    background-color: var(--color-bg-alt);
+}
+
+.legal-article {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-3xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(196, 168, 130, 0.1);
+}
+
+.legal-section {
+    padding-bottom: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.legal-section:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.legal-section h2 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-light);
+    color: var(--color-text);
+    letter-spacing: 0.05em;
+    margin: 0 0 var(--space-lg);
+}
+
+.legal-section p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-medium);
+    line-height: var(--line-height-loose);
+    margin: 0 0 var(--space-md);
+}
+
+.legal-section p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section strong {
+    color: var(--color-text);
+    font-weight: var(--font-weight-medium);
+}
+
+.legal-section a {
+    color: var(--color-blue);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(123, 175, 200, 0.4);
+    transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.legal-section a:hover {
+    color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+}
+
+@media (max-width: 640px) {
+    .legal-article {
+        padding: var(--space-xl);
+    }
+}

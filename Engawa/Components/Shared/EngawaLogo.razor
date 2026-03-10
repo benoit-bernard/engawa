@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 110 60"
+     fill="none"
+     class="engawa-logo @CssClass"
+     style="@Style"
+     role="img"
+     aria-label="Engawa logo">
+
+    <!-- Blue side — three concentric circles -->
+    <circle cx="38" cy="30" r="27" fill="#C8DCE8" opacity="0.72" />
+    <circle cx="38" cy="30" r="18" fill="#9BBDD2" opacity="0.88" />
+    <circle cx="38" cy="30" r="10" fill="#7BAFC8" />
+
+    <!-- Beige side — three concentric circles -->
+    <circle cx="72" cy="30" r="27" fill="#E8D5BB" opacity="0.72" />
+    <circle cx="72" cy="30" r="18" fill="#D4BC96" opacity="0.88" />
+    <circle cx="72" cy="30" r="10" fill="#C4A882" />
+
+    <!-- Subtle S-curve highlights -->
+    <path d="M38 3 C54 3 60 14 58 24 C56 34 48 34 46 44 C44 54 50 57 38 57"
+          stroke="white" stroke-width="1.2" fill="none" opacity="0.35" stroke-linecap="round" />
+    <path d="M72 3 C56 3 50 14 52 24 C54 34 62 34 64 44 C66 54 60 57 72 57"
+          stroke="white" stroke-width="1.2" fill="none" opacity="0.35" stroke-linecap="round" />
+</svg>
+
+@code {
+    [Parameter] public string CssClass { get; set; } = string.Empty;
+    [Parameter] public string Style    { get; set; } = string.Empty;
+}
