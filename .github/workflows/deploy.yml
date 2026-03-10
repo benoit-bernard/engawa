@@ -112,13 +112,13 @@ jobs:
           echo "Publish tree:" || true
           ls -la publish/wwwroot || true
 
-      - name: Add CNAME for custom domain (if provided)
-        if: ${{ secrets.CUSTOM_DOMAIN }}
-        run: |
-          echo "Adding CNAME file with domain from secrets.CUSTOM_DOMAIN"
-          mkdir -p publish/wwwroot
-          echo "${{ secrets.CUSTOM_DOMAIN }}" > publish/wwwroot/CNAME
-          echo "CNAME created: $(cat publish/wwwroot/CNAME)"
+      # - name: Add CNAME for custom domain (if provided)
+      #   if: ${{ secrets.CUSTOM_DOMAIN }}
+      #   run: |
+      #     echo "Adding CNAME file with domain from secrets.CUSTOM_DOMAIN"
+      #     mkdir -p publish/wwwroot
+      #     echo "${{ secrets.CUSTOM_DOMAIN }}" > publish/wwwroot/CNAME
+      #     echo "CNAME created: $(cat publish/wwwroot/CNAME)"
 
       - name: Deploy to GitHub Pages (public branch)
         uses: peaceiris/actions-gh-pages@v4
