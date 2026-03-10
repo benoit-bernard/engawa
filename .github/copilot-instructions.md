@@ -48,10 +48,26 @@ Quand tu génères du code :
 - Toujours ajouter les tests unitaires associés  
 - Préserver compatibilité github pages(pas de code qui pourrait empêcher le déploiement sur github pages)  
 
+## DEBUG
+- Si tu détectes une erreur de code, propose immédiatement une correction.
+- Si il faut faire des actions pour analyser en profondeur : 
+	- Si c'est une analyse du code : fais la
+	- Si c'est une analyse sur une autre branche : fais le
+	- Si ce sont des commande powershell : fais les
+	- Si ce sont des commandes git: fais les
+	- Pour le reste, donne moi des instructions claires pour que je puisse les faire
+
 ## IMPORTANT
 - lire les fichiers xxx.instructions.md dans /.github/instructions.md avant de générer du code
 - respecter les instructions des fichiers xxx.instructions.md dans /.github/instructions.md avant de générer du code
 - lire les spécifications dans /.github/specs avant de générer du code
+
+## publication
+La CICD est configurée pour publier automatiquement sur github pages à chaque push sur la branche main (vers la branche public)
+A chaque génération de code, 
+- tu dois t'assurer de bien compiler le projet pour éviter tout problème de publication.
+- tu dois t'assurer que le code généré est compatible avec github pages et ne bloque pas la publication.
+- tu dois faire une code review pour t'assurer de la qualité de code
 
 
 Fin du fichier.

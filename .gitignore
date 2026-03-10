@@ -5,6 +5,11 @@
 *.user
 *.suo
 
+# Build output
+Engawa/publish/
+www/publish/
+publish/
+
 # Build
 bin/
 obj/
